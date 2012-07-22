@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930957A515BC353900DEA261 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930957A315BC352500DEA261 /* AVFoundation.framework */; };
+		930957A615BC353900DEA261 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930957A115BC351400DEA261 /* QuartzCore.framework */; };
+		930957A715BC353900DEA261 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9309579F15BC350C00DEA261 /* CoreImage.framework */; };
+		930957A815BC353900DEA261 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9309579D15BC350500DEA261 /* CoreAudio.framework */; };
+		930957A915BC353900DEA261 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9309579A15BC34FD00DEA261 /* CoreMedia.framework */; };
+		930957AC15BC38EE00DEA261 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 930957AA15BC38E500DEA261 /* CoreVideo.framework */; };
 		93B9057415BC32E000471CDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9057315BC32E000471CDC /* UIKit.framework */; };
 		93B9057615BC32E000471CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9057515BC32E000471CDC /* Foundation.framework */; };
 		93B9057815BC32E000471CDC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9057715BC32E000471CDC /* CoreGraphics.framework */; };
@@ -18,6 +24,7 @@
 		93B9058E15BC32E000471CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B9057515BC32E000471CDC /* Foundation.framework */; };
 		93B9059615BC32E000471CDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93B9059415BC32E000471CDC /* InfoPlist.strings */; };
 		93B9059915BC32E000471CDC /* GooglyGlassesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9059815BC32E000471CDC /* GooglyGlassesTests.m */; };
+		93B905A415BC333800471CDC /* GGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B905A315BC333800471CDC /* GGViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,22 +38,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9309579A15BC34FD00DEA261 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9309579D15BC350500DEA261 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		9309579F15BC350C00DEA261 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		930957A115BC351400DEA261 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		930957A315BC352500DEA261 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		930957AA15BC38E500DEA261 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		93B9056F15BC32E000471CDC /* GooglyGlasses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooglyGlasses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B9057315BC32E000471CDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		93B9057515BC32E000471CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		93B9057715BC32E000471CDC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		93B9057B15BC32E000471CDC /* GooglyGlasses-Info.plist */ = {isa = PBXFileReference; path = "GooglyGlasses-Info.plist"; sourceTree = "<group>"; };
+		93B9057B15BC32E000471CDC /* GooglyGlasses-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GooglyGlasses-Info.plist"; sourceTree = "<group>"; };
 		93B9057D15BC32E000471CDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93B9057F15BC32E000471CDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		93B9058115BC32E000471CDC /* GooglyGlasses-Prefix.pch */ = {isa = PBXFileReference; path = "GooglyGlasses-Prefix.pch"; sourceTree = "<group>"; };
-		93B9058215BC32E000471CDC /* GGAppDelegate.h */ = {isa = PBXFileReference; path = GGAppDelegate.h; sourceTree = "<group>"; };
+		93B9058115BC32E000471CDC /* GooglyGlasses-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GooglyGlasses-Prefix.pch"; sourceTree = "<group>"; };
+		93B9058215BC32E000471CDC /* GGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GGAppDelegate.h; sourceTree = "<group>"; };
 		93B9058315BC32E000471CDC /* GGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GGAppDelegate.m; sourceTree = "<group>"; };
 		93B9058A15BC32E000471CDC /* GooglyGlassesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooglyGlassesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B9058B15BC32E000471CDC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		93B9059315BC32E000471CDC /* GooglyGlassesTests-Info.plist */ = {isa = PBXFileReference; path = "GooglyGlassesTests-Info.plist"; sourceTree = "<group>"; };
+		93B9059315BC32E000471CDC /* GooglyGlassesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GooglyGlassesTests-Info.plist"; sourceTree = "<group>"; };
 		93B9059515BC32E000471CDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		93B9059715BC32E000471CDC /* GooglyGlassesTests.h */ = {isa = PBXFileReference; path = GooglyGlassesTests.h; sourceTree = "<group>"; };
+		93B9059715BC32E000471CDC /* GooglyGlassesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GooglyGlassesTests.h; sourceTree = "<group>"; };
 		93B9059815BC32E000471CDC /* GooglyGlassesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GooglyGlassesTests.m; sourceTree = "<group>"; };
+		93B905A215BC333800471CDC /* GGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGViewController.h; sourceTree = "<group>"; };
+		93B905A315BC333800471CDC /* GGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +69,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930957A515BC353900DEA261 /* AVFoundation.framework in Frameworks */,
+				930957A615BC353900DEA261 /* QuartzCore.framework in Frameworks */,
+				930957A715BC353900DEA261 /* CoreImage.framework in Frameworks */,
+				930957A815BC353900DEA261 /* CoreAudio.framework in Frameworks */,
+				930957A915BC353900DEA261 /* CoreMedia.framework in Frameworks */,
 				93B9057415BC32E000471CDC /* UIKit.framework in Frameworks */,
 				93B9057615BC32E000471CDC /* Foundation.framework in Frameworks */,
 				93B9057815BC32E000471CDC /* CoreGraphics.framework in Frameworks */,
+				930957AC15BC38EE00DEA261 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +116,12 @@
 		93B9057215BC32E000471CDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				930957AA15BC38E500DEA261 /* CoreVideo.framework */,
+				930957A315BC352500DEA261 /* AVFoundation.framework */,
+				930957A115BC351400DEA261 /* QuartzCore.framework */,
+				9309579F15BC350C00DEA261 /* CoreImage.framework */,
+				9309579D15BC350500DEA261 /* CoreAudio.framework */,
+				9309579A15BC34FD00DEA261 /* CoreMedia.framework */,
 				93B9057315BC32E000471CDC /* UIKit.framework */,
 				93B9057515BC32E000471CDC /* Foundation.framework */,
 				93B9057715BC32E000471CDC /* CoreGraphics.framework */,
@@ -109,6 +136,8 @@
 				93B9058215BC32E000471CDC /* GGAppDelegate.h */,
 				93B9058315BC32E000471CDC /* GGAppDelegate.m */,
 				93B9057A15BC32E000471CDC /* Supporting Files */,
+				93B905A215BC333800471CDC /* GGViewController.h */,
+				93B905A315BC333800471CDC /* GGViewController.m */,
 			);
 			path = GooglyGlasses;
 			sourceTree = "<group>";
@@ -252,6 +281,7 @@
 			files = (
 				93B9058015BC32E000471CDC /* main.m in Sources */,
 				93B9058415BC32E000471CDC /* GGAppDelegate.m in Sources */,
+				93B905A415BC333800471CDC /* GGViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +445,7 @@
 				93B9059E15BC32E000471CDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93B9059F15BC32E000471CDC /* Build configuration list for PBXNativeTarget "GooglyGlassesTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +454,7 @@
 				93B905A115BC32E000471CDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
