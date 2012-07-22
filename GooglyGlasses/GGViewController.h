@@ -3,4 +3,6 @@
 
 @interface GGViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
 
+@property (nonatomic) BOOL isFrontFacing;
+
 @end

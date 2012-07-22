@@ -5,10 +5,12 @@
 @property (nonatomic, strong) AVCaptureSession* session;
 @property (nonatomic, strong) CIDetector* faceDetector;
 @property (nonatomic, strong) CALayer* imageLayer;
+@property (nonatomic, strong) UIButton* flipButton;
 
 - (void) startCamera;
 - (void) stopCamera;
 - (void) renderEyeOn:(CGContextRef)context at:(CGPoint) point radius:(CGFloat)radius;
+- (void) flip;
 
 @end
 
@@ -17,6 +19,16 @@
 @synthesize session;
 @synthesize faceDetector;
 @synthesize imageLayer;
+@synthesize isFrontFacing;
+@synthesize flipButton;
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+  self = [super initWithCoder:nil];
+  if(self) {
+    self.isFrontFacing = YES;
+  }
+  return self;
+}
 
 - (void)viewDidLoad
 {
@@ -26,19 +38,27 @@
   imageLayer.frame = self.view.layer.bounds;
   imageLayer.contentsGravity = kCAGravityResizeAspectFill;
   [self.view.layer addSublayer:imageLayer];
+  
+  self.flipButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  flipButton.frame = CGRectMake(220, 20, 80, 32);
+  NSString* titleText = self.isFrontFacing ? @"Back" : @"Front";
+  [flipButton setTitle:titleText forState:UIControlStateNormal];
+  [flipButton addTarget:self action:@selector(flip) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:flipButton];
 }
 
 - (void)viewDidUnload
 {
   [super viewDidUnload];
   self.imageLayer = nil;
+  self.flipButton = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [self startCamera];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
   [self stopCamera];
 }
 
@@ -47,11 +67,24 @@
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)flip {
+  if(!self.isFrontFacing) {
+    [self dismissModalViewControllerAnimated:YES];
+  } else {
+    GGViewController* backViewController = [[GGViewController alloc] initWithCoder:nil];
+    backViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    backViewController.isFrontFacing = NO;
+    [self presentModalViewController:backViewController animated:YES];
+  }
+}
+
 - (void)startCamera {
   AVCaptureDevice *device = nil;
   NSArray* devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
   for (device in devices) {
-    if (device.position == AVCaptureDevicePositionFront) {
+    if (self.isFrontFacing && device.position == AVCaptureDevicePositionFront) {
+      break;
+    } else if (!self.isFrontFacing && device.position == AVCaptureDevicePositionBack) {
       break;
     }
   }
